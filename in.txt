@@ -1,0 +1,49 @@
+uchar DEF mul(uchar p1, uchar p2)
+OPEN
+	new uchar ans.
+	ans:p1*p2.
+	RET ans.
+CLOSE
+uchar DEF max(uchar p1, uchar p2)
+OPEN
+	new bool a.
+	new uchar ans.
+	a: p1 > p2.
+	WHEN(a)
+		ans:p1.
+	OTHERWISE
+		ans:p2.
+	ENDW
+	RET ans.
+CLOSE
+
+HEAD 
+OPEN
+	new symbol c.
+	c:'a'.
+	writeln c.
+	new string s.
+	s:`TTV-2023`.
+	writeln s.
+	WHEN('a')
+		s: DATE().
+	OTHERWISE
+		s: TIME().
+	ENDW
+	writeln s.
+	new uchar q.
+	new uchar w.
+	q:max(11o,5o) + max(1011b,1111b).
+	w:(3d<~2d) / (2 + q).
+	new uchar e.
+	e:mul(q, w).
+	write e.
+	w: 2 & 4.
+	write w.
+	w: 2 | 4.
+	writeln w.
+	new bool b.
+	b: 4=3.
+	writeln b.
+ENDW.
+CLOSE
